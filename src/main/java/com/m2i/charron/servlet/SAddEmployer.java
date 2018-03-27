@@ -33,7 +33,8 @@ public class SAddEmployer extends HttpServlet {
             throws ServletException, IOException {
         String ename, enumber;
         Boolean ifAddEmplyer = false;
-
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
@@ -58,6 +59,25 @@ public class SAddEmployer extends HttpServlet {
                     + "</p>");
             out.println("</body>");
             out.println("</html>");
+        }
+        catch(Exception e)
+        {
+            PrintWriter out = response.getWriter();
+                    
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ERRROR SAddEmployer</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ERRROR SAddEmployer</h1>");
+            out.println("<p>\n"
+                    + "Erreur Inconue <br /> \n"
+                    + e.getMessage() + "<br /> \n"
+                    + "</p>");
+            out.println("</body>");
+            out.println("</html>");
+            e.printStackTrace();
         }
     }
 

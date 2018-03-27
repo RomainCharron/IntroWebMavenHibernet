@@ -34,4 +34,9 @@ public class EmployerService {
         }
         return true;
     }
+    static public boolean showEmployer(String eNom, String eNumber) {
+        
+        
+        return false;
+    }
 }
