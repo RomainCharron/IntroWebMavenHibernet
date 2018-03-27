@@ -33,33 +33,27 @@ public class SAddEmployer extends HttpServlet {
             throws ServletException, IOException {
         String ename, enumber;
         Boolean ifAddEmplyer = false;
-        
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            
-            
+
             /* TODO output your page here. You may use following sample code. */
             /*Ajout des controlle de champ*/
             ename = request.getParameter("nameEmploer");
             enumber = request.getParameter("MatriculEmploer");
-            
-            try {
-                ifAddEmplyer = EmployerService.AjouterEmployer(ename,enumber);
-            } catch (Exception e) {
-            }
-            
+            ifAddEmplyer = EmployerService.AjouterEmployer(ename, enumber);
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SAddEmployer</title>");            
+            out.println("<title>Servlet SAddEmployer</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SAddEmployer at " + request.getContextPath() + "</h1>");
-            out.println("<p>\n" 
+            out.println("<p>\n"
                     + "Employer <br /> \n"
-                    + "Nom : " + ename +  "<br /> \n"
-                    + "Matricule : " + enumber +  "<br /> \n"
+                    + "Nom : " + ename + "<br /> \n"
+                    + "Matricule : " + enumber + "<br /> \n"
                     + (ifAddEmplyer ? "à étée ajouter" : "n'a pas étée ajouer")
                     + "</p>");
             out.println("</body>");
