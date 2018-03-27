@@ -17,8 +17,9 @@
             <form method="post" action="AjouterEmployer">
                 Saisir un nouvelle employer<br />
                 ---------------------------------<br />
-                <label for="nameEmploerForm" >Nom : <input type="test" name="nameEmploer" id="nameEmploerForm" /></label>
-                <label for="MatriculEmploerForm" >Matricul : <input type="test" name="MatriculEmploer" id="MatriculEmploerForm" /></label>
+                <label for="nameEmploerForm" >Nom : <input type="test" name="nameEmploer" id="nameEmploerForm" /></label><br />
+                <label for="MatriculEmploerForm" >Matricul : <input type="test" name="MatriculEmploer" id="MatriculEmploerForm" /></label><br />
+                <input type="submit" value="Envoyer" />
             </form>
         </p>
     </body>

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.m2i.charron.service.EmployerService;
+
 /**
  *
  * @author Formation
@@ -29,12 +31,24 @@ public class SAddEmployer extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String ename, enumber;
+        Boolean ifAddEmplyer = false;
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
             
             
             /* TODO output your page here. You may use following sample code. */
+            /*Ajout des controlle de champ*/
+            ename = request.getParameter("nameEmploer");
+            enumber = request.getParameter("MatriculEmploer");
+            
+            try {
+                ifAddEmplyer = EmployerService.AjouterEmployer(ename,enumber);
+            } catch (Exception e) {
+            }
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -42,6 +56,12 @@ public class SAddEmployer extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SAddEmployer at " + request.getContextPath() + "</h1>");
+            out.println("<p>\n" 
+                    + "Employer <br /> \n"
+                    + "Nom : " + ename +  "<br /> \n"
+                    + "Matricule : " + enumber +  "<br /> \n"
+                    + (ifAddEmplyer ? "à étée ajouter" : "n'a pas étée ajouer")
+                    + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
