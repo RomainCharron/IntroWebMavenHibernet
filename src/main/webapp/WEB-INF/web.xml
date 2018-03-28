@@ -8,6 +8,14 @@
         <servlet-name>SAddEmployer</servlet-name>
         <url-pattern>/AjouterEmployer</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SShowAllEmployer</servlet-name>
+        <servlet-class>com.m2i.charron.servlet.SShowAllEmployer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SShowAllEmployer</servlet-name>
+        <url-pattern>/VoirAjouterEmployer</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

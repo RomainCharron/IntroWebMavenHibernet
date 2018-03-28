@@ -7,6 +7,9 @@ package com.m2i.charron.service;
 
 import com.m2i.charron.hibernet.Employer;
 import com.m2i.charron.hibernet.NewHibernateUtil;
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -34,9 +37,13 @@ public class EmployerService {
         }
         return true;
     }
-    static public boolean showEmployer(String eNom, String eNumber) {
-        
-        
-        return false;
+    static public List<Employer> showAllEmployees() {
+        List<Employer> employeeList = new ArrayList<Employer>();
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from Employer");
+        System.out.println("nb :"+query.list().size());
+        employeeList = query.list();
+        return employeeList;
     }
+
 }
