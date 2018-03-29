@@ -37,13 +37,33 @@ public class EmployerService {
         }
         return true;
     }
+
     static public List<Employer> showAllEmployees() {
         List<Employer> employeeList = new ArrayList<Employer>();
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Query query = session.createQuery("from Employer");
-        System.out.println("nb :"+query.list().size());
+        System.out.println("nb :" + query.list().size());
         employeeList = query.list();
         return employeeList;
+    }
+
+    static public boolean updateEmployees(String ename, String enumber) {
+        try {
+
+            Employer employee = new Employer(ename, enumber);
+            Session session = NewHibernateUtil.getSessionFactory().openSession();
+            session.update(employee);
+
+            Transaction transaction = session.beginTransaction();
+
+            transaction.commit();
+
+            session.close();
+        } catch (Exception e) {
+            return false;
+        }
+
+        return true;
     }
 
 }

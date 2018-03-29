@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Ajouter un Nouvelle employer</h1>
-        <p>
+        <div>
             <form method="post" action="AjouterEmployer">
                 Saisir un nouvelle employer<br />
                 ---------------------------------<br />
@@ -21,6 +21,6 @@
                 <label for="MatriculEmploerForm" >Matricul : <input type="test" name="MatriculEmploer" id="MatriculEmploerForm" /></label><br />
                 <input type="submit" value="Envoyer" />
             </form>
-        </p>
+        </div>
     </body>
 </html>

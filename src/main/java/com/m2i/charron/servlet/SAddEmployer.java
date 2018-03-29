@@ -52,10 +52,12 @@ public class SAddEmployer extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet SAddEmployer at " + request.getContextPath() + "</h1>");
             out.println("<p>\n"
-                    + "Employer <br /> \n"
+                    + "L\'employer <br /> \n"
+                    + "--------------------------------<br />\n"
                     + "Nom : " + ename + "<br /> \n"
                     + "Matricule : " + enumber + "<br /> \n"
-                    + (ifAddEmplyer ? "à étée ajouter" : "n'a pas étée ajouer")
+                    + "--------------------------------<br />\n"
+                    + (ifAddEmplyer ? "à étée ajouter" : "n'a pas étée ajouer") + "<br />\n"
                     + "</p>");
             out.println("</body>");
             out.println("</html>");
