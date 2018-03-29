@@ -38,30 +38,36 @@ public class EmployerService {
         return true;
     }
 
+    static public Employer showEmployeesById(int id) {
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Employer oe = (Employer) session.get(Employer.class, new Integer(id));
+        session.close();
+        return oe;
+    }
+
     static public List<Employer> showAllEmployees() {
         List<Employer> employeeList = new ArrayList<Employer>();
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Query query = session.createQuery("from Employer");
         System.out.println("nb :" + query.list().size());
         employeeList = query.list();
+        session.close();
+
         return employeeList;
     }
 
-    static public boolean updateEmployees(String ename, String enumber) {
-        try {
+    static public boolean updateEmployees(int id ,String ename, String enumber) {
 
-            Employer employee = new Employer(ename, enumber);
-            Session session = NewHibernateUtil.getSessionFactory().openSession();
-            session.update(employee);
+        Employer employee = new Employer(ename, enumber);
+        employee.setId(id);
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        session.update(employee);
 
-            Transaction transaction = session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
 
-            transaction.commit();
+        transaction.commit();
 
-            session.close();
-        } catch (Exception e) {
-            return false;
-        }
+        session.close();
 
         return true;
     }

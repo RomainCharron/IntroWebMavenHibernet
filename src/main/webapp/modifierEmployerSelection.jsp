@@ -23,16 +23,19 @@
                 Choisissez l'employer à modifier<br />
                 --------------------------------<br />
 
-                <%                    for (Employer unEmployer : EmployerService.showAllEmployees()) {
-
+                <%                    {
+                        int ind = 0;
+                        for (Employer unEmployer : EmployerService.showAllEmployees()) {
+                            ind++;
                 %>
                 <div class="Employer">
-                    <label for='radio<%= "00"%>EmployerEname'> Nom : <%= unEmployer.getEname()%> </label><br />
-                    <label for='radio<%= "00"%>EmployerEnumber'> Matricule : <%= unEmployer.getEnumber()%> </label><br />
-                    <input name="radioEmployer" id='radioEmployer<%= "00"%>' type="radio" value='<%= "id"%>' > <br />
+                    <label for="radio<%= ind%>EmployerEname"> Nom : <%= unEmployer.getEname()%> </label><br />
+                    <label for="radio<%= ind%>EmployerEnumber"> Matricule : <%= unEmployer.getEnumber()%> </label><br />
+                    <input name="radioEmployer" id="radioEmployer<%= ind%>" type="radio" value="<%= unEmployer.getId()%>" > <br />
                 </div>
                 ----------------<br />
                 <%
+                        }
                     }
                 %>
                 <br /><input type="submit" value="Envoyer" /><br />
