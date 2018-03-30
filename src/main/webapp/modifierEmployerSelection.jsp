@@ -18,7 +18,7 @@
     %>
     <body>
         <h1>Hello World!</h1>
-        <form method="get">
+        <form method="post">
             <div>
                 Choisissez l'employer à modifier<br />
                 --------------------------------<br />

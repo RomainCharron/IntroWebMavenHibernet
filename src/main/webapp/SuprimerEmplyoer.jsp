@@ -25,7 +25,7 @@
 
         <h1>Supretion employer</h1>
         <div>
-            <form method="get">
+            <form method="post">
                 Voulet vous suprimer cette employer ?<br />
                 ---------------------------------<br />
                 Id : <%=unEmployer.getId() %><br />

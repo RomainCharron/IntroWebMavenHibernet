@@ -48,7 +48,7 @@
 
         <h1>Modifier employer</h1>
         <div>
-            <form method="get" action="runEmployer.jsp">
+            <form method="post" action="runEmployer.jsp">
                 Saisir un nouvelle employer<br />
                 ---------------------------------<br />
                 <input type="hidden" name="idEmploer" value="<%= radioEmployer%>"/>
