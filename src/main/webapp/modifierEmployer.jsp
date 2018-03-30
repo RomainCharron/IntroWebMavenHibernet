@@ -52,8 +52,8 @@
                 Saisir un nouvelle employer<br />
                 ---------------------------------<br />
                 <input type="hidden" name="idEmploer" value="<%= radioEmployer%>"/>
-                <label for="nameEmploerForm" >Nom : <input type="test" name="nameEmploer" id="nameEmploerForm" value="<%= unEmployer.getEname()%>"/></label><br />
-                <label for="MatriculEmploerForm" >Matricul : <input type="test" name="MatriculEmploer" id="MatriculEmploerForm" value="<%= unEmployer.getEnumber()%>"/></label><br />
+                <label for="nameEmploerForm" >Nom : <input type="text" name="nameEmploer" id="nameEmploerForm" value="<%= unEmployer.getEname()%>"/></label><br />
+                <label for="MatriculEmploerForm" >Matricul : <input type="text" name="MatriculEmploer" id="MatriculEmploerForm" value="<%= unEmployer.getEnumber()%>"/></label><br />
                 <input type="submit" value="Envoyer" />
             </form>
         </div>
