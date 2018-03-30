@@ -15,6 +15,11 @@
     radioEmployer = Integer.parseInt(request.getParameter("radioEmployer"));
     unEmployer = EmployerService.showEmployeesById(radioEmployer);
 
+    
+    HttpSession userSession = request.getSession(true);
+    String idSaisie = "";
+    idSaisie = unEmployer.getId().toString();
+    userSession.setAttribute("idSaisie", idSaisie);
 %>
 <html>
     <head>
@@ -28,12 +33,12 @@
             <form method="post">
                 Voulet vous suprimer cette employer ?<br />
                 ---------------------------------<br />
-                Id : <%=unEmployer.getId() %><br />
-                Nom : <%=unEmployer.getEname() %><br />
-                Matricule : <%=unEmployer.getEnumber() %><br />
-                <input type="hidden" value="<%=unEmployer.getId() %>" name="Eid" />
+                Id : <%=unEmployer.getId()%><br />
+                Nom : <%=unEmployer.getEname()%><br />
+                Matricule : <%=unEmployer.getEnumber()%><br />
+                <!--<input type="hidden" value="<%=unEmployer.getId()%>" name="Eid" />--->
                 <input type="submit" value="Oui" formaction="runSuprimerEmplyoer.jsp"> 
-                <input type="submit" value="non" formaction="modifierEmployer.jsp">
+                <input type="submit" value="non" formaction="modifierEmployerSelection.jsp">
             </form>
     </body>
 </html>

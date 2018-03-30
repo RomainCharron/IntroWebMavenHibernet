@@ -8,9 +8,19 @@
 <%@page import="com.m2i.charron.service.EmployerService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    int idEmploer = Integer.parseInt(request.getParameter("Eid"));
+    HttpSession userSession = request.getSession(true);
+    
+    int idEmploer;
+    String eIdSession = "";
+    
+    //idEmploer = Integer.parseInt(request.getParameter("Eid"));
+    eIdSession = (String)userSession.getAttribute("idSaisie");
+    idEmploer = Integer.parseInt(eIdSession);
+    
     Employer unEmployer = EmployerService.showEmployeesById(idEmploer);
     EmployerService.deleteEmployees(idEmploer);
+    
+    
 %>
 <!DOCTYPE html>
 <html>
