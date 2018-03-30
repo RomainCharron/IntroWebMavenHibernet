@@ -27,6 +27,7 @@
             <%
                 }
             %>
+        <a href="index.html">retour index</a>
 
         </p>
     </body>

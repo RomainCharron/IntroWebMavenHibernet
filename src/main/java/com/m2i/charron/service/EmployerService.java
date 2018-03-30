@@ -56,7 +56,7 @@ public class EmployerService {
         return employeeList;
     }
 
-    static public boolean updateEmployees(int id ,String ename, String enumber) {
+    static public void updateEmployees(int id ,String ename, String enumber) {
 
         Employer employee = new Employer(ename, enumber);
         employee.setId(id);
@@ -68,8 +68,18 @@ public class EmployerService {
         transaction.commit();
 
         session.close();
-
-        return true;
     }
+    
+    static public void deleteEmployees(int id) {
 
+        Employer employee = showEmployeesById(id);
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        session.delete(employee);
+
+        Transaction transaction = session.beginTransaction();
+
+        transaction.commit();
+
+        session.close();
+    }
 }

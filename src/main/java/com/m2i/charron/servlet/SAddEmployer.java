@@ -58,7 +58,8 @@ public class SAddEmployer extends HttpServlet {
                     + "Matricule : " + enumber + "<br /> \n"
                     + "--------------------------------<br />\n"
                     + (ifAddEmplyer ? "à étée ajouter" : "n'a pas étée ajouer") + "<br />\n"
-                    + "</p>");
+                    + "</p>\n" +
+"        <a href=\"index.html\">retour index</a>");
             out.println("</body>");
             out.println("</html>");
         }

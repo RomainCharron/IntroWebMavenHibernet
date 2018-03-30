@@ -1,6 +1,6 @@
 <%-- 
-    Document   : runEmployer
-    Created on : 29 mars 2018, 16:10:11
+    Document   : runSuprimerEmplyoer
+    Created on : 30 mars 2018, 09:55:08
     Author     : Formation
 --%>
 
@@ -8,22 +8,20 @@
 <%@page import="com.m2i.charron.service.EmployerService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String ename = request.getParameter("nameEmploer");
-    String enumber = request.getParameter("MatriculEmploer");
-    int idEmploer = Integer.parseInt(request.getParameter("idEmploer"));
+    int idEmploer = Integer.parseInt(request.getParameter("Eid"));
     Employer unEmployer = EmployerService.showEmployeesById(idEmploer);
-    EmployerService.updateEmployees(idEmploer, ename, enumber);
+    EmployerService.deleteEmployees(idEmploer);
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modification Employer</title>
+        <title>Supretion Employer</title>
     </head>
     <body>
-        <h1>Modification Employer</h1>
+        <h1>Supretion Employer</h1>
         --------------------------------<br />
-        L'employer à bien été modifier<br />
+        L'employer à bien été Suprimer<br />
         <a href="index.html">retour index</a>
         <!-- ---------------- -->
     </body>

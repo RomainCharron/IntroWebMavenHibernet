@@ -18,7 +18,7 @@
     %>
     <body>
         <h1>Hello World!</h1>
-        <form method="get" action="modifierEmployer.jsp">
+        <form method="get">
             <div>
                 Choisissez l'employer à modifier<br />
                 --------------------------------<br />
@@ -38,7 +38,10 @@
                         }
                     }
                 %>
-                <br /><input type="submit" value="Envoyer" /><br />
+                <br />
+                <input type="submit" formaction="modifierEmployer.jsp" value="Modifier" /> 
+                <input type="submit" formaction="SuprimerEmplyoer.jsp" value="Suprimer" />
+                <br />
             </div>
         </form>
     </body>
